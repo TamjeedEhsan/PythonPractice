@@ -137,3 +137,74 @@ for i in userInput:
         output["letters"] += 1
     
 print(output)
+
+13) Write a Python program to check the validity of passwords input by users.
+Validation :
+At least 1 letter between [a-z] and 1 letter between [A-Z].
+At least 1 number between [0-9].
+At least 1 character from [$#@].
+Minimum length 6 characters.
+Maximum length 16 characters.
+
+password = input("Enter your password: ")
+
+while True:
+    if len(password) < 6 or len(password) > 16:
+        print("Invalid password length must be 6–16)")
+        break
+    if not any(c.isdigit() for c in password):
+        print("there is no digit in password")
+        break
+    if not any(c.islower() for c in password):
+        print("there is no lower case letter in the password")
+        break
+    if not any(c.isupper() for c in password):
+        print("there is no upper case letter in password")
+        break
+    if not any(c in "$#@" for c in password):
+        print("there are no special characters in password")
+        break
+    print("password accepted")
+    break
+
+14) Write a Python program to find numbers between 100 and 400 (both included) where each digit of a number is an even number. The numbers obtained should be printed in a 
+comma-separated sequence.
+evenDigitNumbers = []
+for i in range(100,401):
+    string = str(i)
+    if (int(string[0])) % 2 == 0 and (int(string[1])) % 2 == 0 and (int(string[2])) % 2 == 0:
+        evenDigitNumbers.append(string)
+
+print(evenDigitNumbers)
+
+15) Write a Python program to calculate a dog's age in dog years.
+h_age = int(input("Input a dog's age in human years: "))
+if h_age < 0:
+    print("Age must be a positive number.")
+    exit()
+elif h_age <= 2:
+    d_age = h_age * 10.5
+else:
+    d_age = 21 + (h_age - 2) * 4
+print("The dog's age in dog's years is", d_age)
+
+16) Write a Python program to check whether an alphabet is a vowel or consonant.
+alphabet = input("Enter an alphabet: ").lower()
+if alphabet in "aeiou":
+    print("vowel")
+else:
+    print("consonant")
+
+17) Write a Python program to convert a month name to a number of days.
+print("List of months: January, February, March, April, May, June, July, August, September, October, November, December")
+month_name = input("Input the name of Month: ")
+if month_name == "February":
+    print("No. of days: 28/29 days")  
+elif month_name in ("April", "June", "September", "November"):
+    print("No. of days: 30 days") 
+elif month_name in ("January", "March", "May", "July", "August", "October", "December"):
+    print("No. of days: 31 days") 
+else:
+    print("Wrong month name")  
+
+18) 
