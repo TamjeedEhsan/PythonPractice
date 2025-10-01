@@ -207,4 +207,105 @@ elif month_name in ("January", "March", "May", "July", "August", "October", "Dec
 else:
     print("Wrong month name")  
 
-18) 
+18) Write a Python program to sum two integers. However, if the sum is between 15 and 20 it will return 20.
+def sum(x, y):
+    sum = x + y
+    if sum in range(15, 20):
+        return 20  
+    else:
+        return sum  
+print(sum(10, 6))  
+print(sum(10, 2))  
+print(sum(10, 12))  
+
+19) Write a Python program that checks whether a string represents an integer or not.
+userInput = input("enter a string  ").strip()
+if any(c.isalpha() for c in userInput):
+    print("does not represent an integer")
+elif any (c in "%$#@!_-" for c in userInput):
+    print("does not represent an integer")
+else:
+    print("represents an integer")
+
+19) Write a Python program to check if a triangle is equilateral, isosceles or scalene.
+An equilateral triangle is a triangle in which all three sides are equal.
+A scalene triangle is a triangle that has three unequal sides.
+An isosceles triangle is a triangle with (at least) two equal sides.
+
+length1 = int(input("enter the length of side 1 = "))
+length2 = int(input("enter the length of side 2 = "))
+length3 = int(input("enter the length of side 3 = "))
+
+if length1 == length2 == length3:
+    print("equilateral triangle")
+elif (length1 == length2) or (length1 == length3) or (length3 == length2):
+    print("isoceles triangle")
+else:
+    print("scalene triange")
+
+20) Write a Python program that reads two integers representing a month and day and prints the season for that month and day.
+Expected Output:
+Input the month (e.g. January, February etc.): july                     
+Input the day: 31                                                       
+Season is autumn
+
+month = input("Input the month (e.g. January, February etc.): ")
+day = int(input("Input the day: "))
+if month in ('January', 'February', 'March'):
+    season = 'winter'
+elif month in ('April', 'May', 'June'):
+    season = 'spring'
+elif month in ('July', 'August', 'September'):
+    season = 'summer'
+else:
+    season = 'autumn'
+
+if (month == 'March') and (day > 19):
+    season = 'spring'
+elif (month == 'June') and (day > 20):
+    season = 'summer'
+elif (month == 'September') and (day > 21):
+    season = 'autumn'
+elif (month == 'December') and (day > 20):
+    season = 'winter'
+print("Season is", season) 
+
+21) Write a Python program to display the astrological sign for a given date of birth
+day = int(input("Input birthday: "))
+month = input("Input month of birth (e.g. march, july etc): ")
+
+if month == 'december':
+    astro_sign = 'Sagittarius' if (day < 22) else 'Capricorn'
+elif month == 'january':
+    astro_sign = 'Capricorn' if (day < 20) else 'Aquarius'
+elif month == 'february':
+    astro_sign = 'Aquarius' if (day < 19) else 'Pisces'
+elif month == 'march':
+    astro_sign = 'Pisces' if (day < 21) else 'Aries'
+elif month == 'april':
+    astro_sign = 'Aries' if (day < 20) else 'Taurus'
+elif month == 'may':
+    astro_sign = 'Taurus' if (day < 21) else 'Gemini'
+elif month == 'june':
+    astro_sign = 'Gemini' if (day < 21) else 'Cancer'
+elif month == 'july':
+    astro_sign = 'Cancer' if (day < 23) else 'Leo'
+elif month == 'august':
+    astro_sign = 'Leo' if (day < 23) else 'Virgo'
+elif month == 'september':
+    astro_sign = 'Virgo' if (day < 23) else 'Libra'
+elif month == 'october':
+    astro_sign = 'Libra' if (day < 23) else 'Scorpio'
+elif month == 'november':
+    astro_sign = 'Scorpio' if (day < 22) else 'Sagittarius'
+print("Your Astrological sign is :", astro_sign) 
+
+22) Write a Python program to find the median of a list of values.
+values = [7, 1, 3, 9, 5]
+values = sorted(values)
+n = len(values)
+if n % 2 == 0:  
+    median = (values[n//2 - 1] + values[n//2]) / 2
+else:           
+    median = values[n//2]
+print("Median:", median)
